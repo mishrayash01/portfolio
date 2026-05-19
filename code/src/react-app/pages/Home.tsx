@@ -3,7 +3,7 @@ import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import Navigation from '@/react-app/components/Navigation';
 
 export default function HomePage() {
-  const [isMobile, setIsMobile] = useState(false);
+  const [setIsMobile] = useState(false);
 
   // Parallax tracking
   const mouseX = useMotionValue(0);
@@ -15,7 +15,7 @@ export default function HomePage() {
 
   const textX = useTransform(springX, [-1, 1], [-40, 40]);
   const textY = useTransform(springY, [-1, 1], [-40, 40]);
-  
+
   const gridX = useTransform(springX, [-1, 1], [-15, 15]);
   const gridY = useTransform(springY, [-1, 1], [-15, 15]);
 
@@ -45,7 +45,7 @@ export default function HomePage() {
       className="relative w-full min-h-screen overflow-hidden"
     >
       {/* Mood Radial Gradient */}
-      <div 
+      <div
         className="absolute inset-0 z-0 pointer-events-none"
         style={{
           background: `radial-gradient(circle at 50% 50%, #1E293B 0%, transparent 60%)`,
@@ -54,9 +54,9 @@ export default function HomePage() {
 
       <div className="relative w-full h-[100vh] overflow-hidden">
         <Navigation />
-        
+
         {/* Animated Background Grid */}
-        <motion.div 
+        <motion.div
           style={{ x: gridX, y: gridY }}
           className="absolute inset-[-5%] w-[110%] h-[110%] pointer-events-none z-0 opacity-20"
         >
@@ -72,7 +72,7 @@ export default function HomePage() {
         {/* Grain overlay */}
         <div
           className="absolute inset-0 pointer-events-none z-[100] mix-blend-overlay"
-          style={{ 
+          style={{
             opacity: 0.4,
             backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='1 0 0 0 0, 0 1 0 0 0, 0 0 1 0 0, 0 0 0 0.15 0' /%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E")`,
             backgroundSize: '200px 200px',
@@ -111,11 +111,11 @@ export default function HomePage() {
         <div className="absolute bottom-6 left-4 sm:bottom-12 sm:left-12 z-[60] w-[calc(100%-32px)] sm:w-[420px]">
           <div className="bg-black/20 backdrop-blur-2xl border border-white/10 rounded-[2rem] p-6 sm:p-8 shadow-2xl relative overflow-hidden">
             {/* Subtle glow inside the panel */}
-            <div 
-              className="absolute -inset-10 opacity-20 blur-3xl z-0 pointer-events-none" 
+            <div
+              className="absolute -inset-10 opacity-20 blur-3xl z-0 pointer-events-none"
               style={{ backgroundColor: '#1E293B' }}
             />
-            
+
             <div className="relative z-10">
               <p className="font-bold uppercase tracking-[0.2em] mb-4 text-[11px] sm:text-[13px] text-white/70" style={{ fontFamily: "'Space Grotesk', sans-serif" }}>
                 Product & Engineering

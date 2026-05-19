@@ -1,4 +1,4 @@
-import React, { useRef, useEffect, useState } from 'react';
+
 import { motion, useScroll, useTransform } from 'framer-motion';
 import Navigation from '@/react-app/components/Navigation';
 
@@ -74,22 +74,19 @@ const ExperienceCard = ({ exp, index, isMobile }: { exp: any; index: number; isM
       whileInView={{ opacity: 1, y: 0, x: 0 }}
       viewport={{ once: true, margin: "-100px" }}
       transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-      className={`relative w-full sm:w-1/2 z-10 ${
-        isMobile 
-          ? 'mb-16' 
-          : `${isLeft ? 'self-start pr-12' : 'self-end pl-12'} ${index > 0 ? '-mt-24' : ''}`
-      }`}
+      className={`relative w-full sm:w-1/2 z-10 ${isMobile
+        ? 'mb-16'
+        : `${isLeft ? 'self-start pr-12' : 'self-end pl-12'} ${index > 0 ? '-mt-24' : ''}`
+        }`}
     >
       {/* Desktop connector */}
       {!isMobile && (
-        <div className={`absolute top-16 h-[2px] bg-gradient-to-r ${
-          isLeft 
-            ? 'from-transparent to-cyan-500/60 right-0 w-12' 
-            : 'from-cyan-500/60 to-transparent left-0 w-12'
-        } z-0`}>
-          <div className={`absolute top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.9)] ${
-            isLeft ? 'right-[-6px]' : 'left-[-6px]'
-          }`} />
+        <div className={`absolute top-16 h-[2px] bg-gradient-to-r ${isLeft
+          ? 'from-transparent to-cyan-500/60 right-0 w-12'
+          : 'from-cyan-500/60 to-transparent left-0 w-12'
+          } z-0`}>
+          <div className={`absolute top-1/2 -translate-y-1/2 w-3 h-3 rounded-full bg-cyan-400 shadow-[0_0_15px_rgba(34,211,238,0.9)] ${isLeft ? 'right-[-6px]' : 'left-[-6px]'
+            }`} />
         </div>
       )}
 
@@ -167,7 +164,7 @@ const ExperienceCard = ({ exp, index, isMobile }: { exp: any; index: number; isM
 
 export default function JourneyPage() {
   const containerRef = useRef<HTMLDivElement>(null);
-  
+
   // Track scroll position for the glowing wire
   const { scrollYProgress } = useScroll({
     target: containerRef,
@@ -206,7 +203,7 @@ export default function JourneyPage() {
       />
 
       <div className="relative z-10 max-w-6xl mx-auto px-6 pt-40 pb-32 sm:px-12 sm:pt-48 sm:pb-40">
-        
+
         {/* Page Header */}
         <motion.div
           initial={{ opacity: 0, y: -20 }}
@@ -214,7 +211,7 @@ export default function JourneyPage() {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="text-center mb-24 sm:mb-32 px-4"
         >
-          <h1 
+          <h1
             className="text-4xl sm:text-6xl md:text-7xl font-black text-transparent bg-clip-text bg-gradient-to-b from-white to-white/40 tracking-tighter leading-tight pb-2"
             style={{ fontFamily: "'Space Grotesk', sans-serif" }}
           >
@@ -227,12 +224,12 @@ export default function JourneyPage() {
 
         {/* Timeline Container */}
         <div ref={containerRef} className="relative w-full mx-auto max-w-5xl">
-          
+
           {/* Central Wire Base */}
           <div className="absolute left-6 sm:left-1/2 top-0 bottom-0 w-[1px] bg-white/10 -translate-x-1/2" />
-          
+
           {/* Animated Glowing Fill Wire */}
-          <motion.div 
+          <motion.div
             className="absolute left-6 sm:left-1/2 top-0 bottom-0 w-[2px] bg-gradient-to-b from-cyan-400 via-blue-500 to-transparent -translate-x-1/2 origin-top shadow-[0_0_20px_rgba(34,211,238,0.8)]"
             style={{ scaleY: wireHeight }}
           />
