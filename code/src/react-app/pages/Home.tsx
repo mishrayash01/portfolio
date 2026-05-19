@@ -3,8 +3,6 @@ import { motion, useMotionValue, useSpring, useTransform } from 'framer-motion';
 import Navigation from '@/react-app/components/Navigation';
 
 export default function HomePage() {
-  const [setIsMobile] = useState(false);
-
   // Parallax tracking
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
@@ -27,13 +25,6 @@ export default function HomePage() {
     mouseX.set(x);
     mouseY.set(y);
   };
-
-  useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth < 640);
-    handleResize();
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
 
   return (
     <div
