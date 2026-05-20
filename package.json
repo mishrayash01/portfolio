@@ -2,9 +2,8 @@
   "name": "mocha-app-root",
   "private": true,
   "scripts": {
-    "dev": "npm run dev --prefix code",
-    "build": "npm run build --prefix code",
-    "install:code": "npm install --prefix code"
+    "dev": "vite",
+    "build": "vite build"
   },
   "devDependencies": {
     "autoprefixer": "^10.5.0",
