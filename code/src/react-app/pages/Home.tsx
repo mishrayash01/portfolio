@@ -73,7 +73,7 @@ export default function HomePage() {
 
         {/* Brand label */}
         <div className="absolute top-8 left-6 sm:left-10 z-[60] text-xs font-semibold uppercase text-white/80 tracking-[0.25em]">
-          YASH MISHRA
+
         </div>
 
         {/* Interactive Parallax Ghost Text */}
