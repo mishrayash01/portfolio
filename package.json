@@ -2,7 +2,7 @@
   "name": "mocha-app-root",
   "private": true,
   "scripts": {
-    "dev": "cd code && vite",
+    "dev": "cd code && npm run dev",
     "build": "cd code && npm install && npm run build"
   },
   "devDependencies": {

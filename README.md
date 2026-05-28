@@ -20,4 +20,3 @@ This portfolio is engineered using modern, high-performance web technologies:
 
 ---
 *Designed and Developed by Yash Mishra.*
-# portfolio
