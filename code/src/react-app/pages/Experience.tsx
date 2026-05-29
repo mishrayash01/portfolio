@@ -9,7 +9,7 @@ const EXPERIENCES = [
     company: "GroVize (In Development)",
     date: "Phase 1",
     focus: "Market Research & Problem Discovery",
-    impact: "Identified severe inventory and billing inefficiencies in India's retail market. Interviewed 30+ local Kirana store owners to validate the core problem before writing any code.",
+    impact: "Identified severe inventory and billing inefficiencies in India's retail market. Interviewed local Kirana store owners to validate the core problem before writing any code.",
     stack: ["User Research", "B2B Strategy", "Problem Validation"],
   },
   {
